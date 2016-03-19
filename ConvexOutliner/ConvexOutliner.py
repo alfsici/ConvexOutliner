@@ -37,9 +37,9 @@ class ConvexOutliner(object):
         self.screenPoints = self.get2dPoints(self.vtxPoints)
         self.hull = ConvexHull(self.screenPoints)
         self.indexes = self.hull.vertices
-        self.outlinePoints = [[self.vtxPoints[i].x,
-                               self.vtxPoints[i].y,
-                               self.vtxPoints[i].z]
+        self.outlinePoints = [[self.vtxPoints[int(i)].x,
+                               self.vtxPoints[int(i)].y,
+                               self.vtxPoints[int(i)].z]
                               for i in self.indexes]
 
         if projectOnPlane:
